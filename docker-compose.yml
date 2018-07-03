@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  burger-builder:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./burger-builder/config:/usr/src/app/config
+      - ./burger-builder/src:/usr/src/app/src
+      - ./burger-builder/scripts:/usr/src/app/scripts
+      - ./burger-builder/public:/usr/src/app/public
+      - ./burger-builder/package.json:/usr/src/app/package.json
+      - ./burger-builder/yarn.lock:/usr/src/app/yarn.lock
+    container_name: "myburger"
